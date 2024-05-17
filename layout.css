@@ -14,6 +14,14 @@ body {
   padding: 0.5rem;
 }
 
+header {
+  width: 100%;
+}
+
+header img {
+  width: 50%;
+}
+
 nav {
   margin-bottom: 1rem;
 }
@@ -24,19 +32,21 @@ nav ul {
   flex-direction: row;
 }
 nav ul li {
+  box-sizing: border-box;
   width: 20%;
+  overflow: hidden;
   text-align: center;
   padding: 1rem;
   border: 1px solid var(--darkgreen);
   border-radius: 15px;
   box-shadow: var(--darkgreen) 0 2px;
-  font-size: 1.5rem;
+  font-size: 100%;
   color: #FFF;
   text-shadow: var(--darkgreen) 0 2px;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 #vision {
@@ -55,38 +65,70 @@ section {
 #section-text-container {
   display: flex;
   align-items: center;
-  height: 400px;
-  background-color: antiquewhite;
+  width: calc(100% / 3 * 2);
   padding-left: 1rem;
+  margin-right: .5rem;
+  background-color: antiquewhite;
 }
-#vision figure img {
-  height: 400px;
+#section-img-container {
+  box-sizing: border-box;
+  margin-left: .5rem;
+  width: calc(100% / 3);
+}
+figure img {
+  width: 100%;
+}
+
+#mobile-section-text {
+  display: none;
+  font-size: 1.25rem;
+  padding: 0 1rem 1rem 1rem;
 }
 
 #boxes {
+  box-sizing: border-box;
   width: var(100% - 2rem);
   display: flex;
   flex-direction: row;
   background-color: #fff;
 }
 
+#aside-1 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+
+  width: calc(100% / 3 * 2);
+}
+#aside-2 {
+  box-sizing: border-box;
+  width: calc(100% / 3);
+  padding: 1rem 1rem 1rem .5rem;
+}
+
 h3 {
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 100%;
   padding: 1rem;
-  background-color: var(--gray)
+  background-color: var(--gray);
+  text-wrap: nowrap;
+  overflow: hidden;
 }
 
 #specials {
-  width: var(100% / 3);
+  overflow: hidden;
   padding: 1rem 0.5rem 1rem 1rem;
 }
+#arrow {
+  font-weight: 900;
+}
 #events {
-  width: var(100% / 3);
   padding: 1rem 0.5rem 1rem 0.5rem;
 }
+
 #news {
-  width: var(100% / 3);
-  padding: 1rem 1rem 1rem 0.5rem;
+  width: 100%;
 }
 
 #specials img {
@@ -103,7 +145,8 @@ h3 {
   display: flex;
   flex-direction: row;
   padding-top: 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  text-wrap: nowrap;
 }
 #menu-dates {
   font-weight: bold;
@@ -111,3 +154,62 @@ h3 {
 #menu-description {
   margin-left: 1rem;
 }
+
+footer {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer p {
+  font-size: 125%;
+  line-height: 1.25;
+}
+
+
+#footer-right img {
+  width: 1rem;
+}
+
+@media screen and (max-width: 769px) {
+  h2 {
+    font-size: 1rem;
+  }
+  #boxes {
+    flex-direction: column;
+    width: calc(100%);
+  }
+  #aside-1 {
+    width: 100%;
+    padding-right: .5rem;
+  }
+  #events {
+    margin: 0;
+  }
+  #aside-2 {
+    margin: 0;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+  @media screen and (max-width: 426px) {
+    nav {
+      width: 100%;
+    }
+    nav ul {
+      flex-direction: column;
+    }
+    nav ul li {
+      width: 100%;
+    }
+
+    #mobile-section-text {
+      display: flex;
+    }
+    
+    #vision {
+      display: none;
+    }
+  }
